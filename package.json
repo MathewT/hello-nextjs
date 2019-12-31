@@ -1,0 +1,18 @@
+{
+  "name": "hello-nextjs",
+  "version": "1.0.0",
+  "description": "Next.js hello project",
+  "author": "Mathew Thomas <mathew.thomas@longdivision.com>",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "next",
+    "build": "next build",
+    "start": "next start"
+  },
+ "dependencies": {
+    "json-log": "3.0.1",
+    "react": "16.12.0",
+    "react-dom": "16.12.0",
+    "next": "9.1.6"
+  }
+}
