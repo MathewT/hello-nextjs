@@ -18,6 +18,9 @@ const Header = () => (
     <Link href="/stylr">
       <a style={linkStyle}>Stylr</a>
     </Link>
+    <Link href="/stylrposts">
+      <a style={linkStyle}>Stylr Posts</a>
+    </Link>
   </div>
 );
 
