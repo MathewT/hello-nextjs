@@ -16,10 +16,11 @@ RUN pip install awscli --upgrade --user
 COPY package*.json ./
 COPY deploy.sh ./
 COPY install-node.sh ./
-COPY next.config.js  ./
 COPY node-v12.14.0-linux-x64.tar.gz ./
 
 RUN ./install-node.sh
+
+COPY next.config.js  ./
 
 ## RUN npm install
 # If you are building your code for production

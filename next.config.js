@@ -1,10 +1,23 @@
+
+const fetch = require('isomorphic-unfetch');
+
 module.exports = {
   exportTrailingSlash: true,
-  exportPathMap: function() {
-    return {
-      '/': { page: '/' }
+  exportPathMap: async function() {
+    const paths = {
+      '/': { page: '/' },
+      '/about': { page: '/about' },
+      '/batman': { page: '/batman'}
     };
+    const res = await fetch('https://api.tvmaze.com/search/shows?q=batman');
+    const data = await res.json();
+    const shows = data.map(entry => entry.show);
+
+    shows.forEach(show => {
+      paths[`/b/${show.id}`] = { page: '/b/[id]', query: { id: show.id } };
+    });
+
+    return paths;
   }
 };
-
 
